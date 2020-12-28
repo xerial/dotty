@@ -46,6 +46,7 @@ object Test {
     println(identityMaped((Nil: List[Int]) match { case _: List[t] => 64 }))
     println(identityMaped({ object F { type T = Int }; val x: F.T = 65; x }))
     println(identityMaped({ val x: Foo { type T = Int } = new Foo { type T = Int; def y: Int = 66 }; x.y }))
+    println(identityMaped({ trait A; new A {} }))
   }
 
   object I55 {
